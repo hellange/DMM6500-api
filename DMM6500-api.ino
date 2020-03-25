@@ -4,12 +4,12 @@
  This sketch connects to a DMM6500
  using an a W5500 based ethernet board connnected to a Teensy 3.2.
  Based on the DMM6500 ajax_proc (undocumented?) API.
- Just a first test to see if it`s possible to read data from DMM6500 though its ethernet port.
+ Just a first hack to see if it`s possible to read data from DMM6500 though its ethernet port.
  
- created 25 Mar 2020
+ created 25 Mar 2020 by Helge Langehaug.
  
- Based on WebClient
- work by David A. Mellis
+ Crude adaption of original WebClient (ref Ethernet library) work
+ by David A. Mellis
  modified 9 Apr 2012
  by Tom Igoe, based on work by Adrian McEwen
 
@@ -24,8 +24,8 @@ byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 
 // if you don't want to use DNS (and reduce your sketch size)
 // use the numeric IP instead of the name for the server:
-IPAddress server(192,168,1,106);  // numeric IP for Google (no DNS)
-//char server[] = "www.google.comx";    // name address for Google (using DNS)
+IPAddress server(192,168,1,106);  // numeric IP for your DMM6500  (original file was Google (no DNS)
+//char server[] = "www.google.com";    // NOT RELEVANT FOR DMM6500 test. Original comment: name address for Google (using DNS)
 
 // Set the static IP address to use if the DHCP fails to assign
 IPAddress ip(192, 168, 0, 177);
